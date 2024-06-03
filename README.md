@@ -55,6 +55,9 @@ $ docker-compose up -d      # auto build docker image depend on Dockerfile & run
 ```
 https://stackoverflow.com/questions/4185365/no-submodule-mapping-found-in-gitmodule-for-a-path-thats-not-a-submodule
 ```
+## Health check 
+- health check app: /api/v1/healthcheck/live
+- health check db: /api/v1/healthcheck/ready
 
 
 
