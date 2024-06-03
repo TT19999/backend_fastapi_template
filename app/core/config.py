@@ -10,16 +10,14 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 
 class Settings(BaseSettings):
-
-    PROJECT_NAME: str = os.getenv('PROJECT_NAME', 'Lead management api')
+    PROJECT_NAME: str = os.getenv('PROJECT_NAME', 'Demo')
     DEBUG: bool = os.getenv('DEBUG', 'False')
     SECRET_KEY: Optional[str] = os.getenv('SECRET_KEY', '')
-    ALGORITHM: Optional[str] = os.getenv('ALGORITHM', '')
-    ACCESS_TOKEN_EXPIRE_MINUTES: Optional[str] = int(
+    ALGORITHM: Optional[str] = os.getenv('ALGORITHM', 'HS256')
+    ACCESS_TOKEN_EXPIRE_MINUTES: Optional[int] = int(
         os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
     BACKEND_CORS_ORIGINS: Optional[list] = ["*"]
-    ACCESS_TOKEN_EXPIRE_SECONDS: int = 60 * \
-        60 * 24 * 7  # Token expired after 7 days
+    ACCESS_TOKEN_EXPIRE_SECONDS: int = 60 * 60 * 24 * 7  # Token expired after 7 days
     SECURITY_ALGORITHM: Optional[str] = 'HS256'
     LOGGING_CONFIG_FILE: Optional[str] = os.path.join(BASE_DIR, 'logging.ini')
 
@@ -37,7 +35,7 @@ class Settings(BaseSettings):
     FS_DIRECTORY: Optional[str] = os.getenv("FS_DIRECTORY", "/tmp")
 
     # RAM
-    KAFKA_CONN_STR: str = os.getenv('KAFKA_CONN_STR')
+    KAFKA_CONN_STR: str = os.getenv('KAFKA_CONN_STR', '')
 
 
 settings = Settings()

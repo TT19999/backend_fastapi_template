@@ -1,4 +1,8 @@
 annotated-types==0.5.0
+alembic==1.11.0
+openpyxl==3.1.2
+coverage==7.2.7
+docstring-parser==0.15
 anyio==3.7.1
 certifi==2023.7.22
 click==8.1.7
@@ -44,3 +48,8 @@ uvicorn==0.23.2
 uvloop==0.17.0
 watchfiles==0.20.0
 websockets==11.0.3
+passlib==1.7.4
+python-jose==3.3.0
+requests==2.30.0
+pymysql
+cryptography
